@@ -1,0 +1,238 @@
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 20px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #e8e8e8;
+
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  transform: scale(0.5);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #272830;
+  transform: scale(1);
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #272830;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: #272830;
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+.slide-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 550px;
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  background-color: #ffffff;
+  padding: 40px;
+  gap: 32px;
+}
+
+.slide-info .h1 {
+  color: #272830;
+
+  font-family: VelaSans;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48.6px;
+}
+
+.slide-info .p {
+  color: #66686f;
+
+  font-family: Onest, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+.slide-info .btn-info {
+  font-family: Onest, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+
+  width: 153px;
+  height: 48px;
+  padding: 16px, 32px, 16px, 32px;
+  gap: 10px;
+  color: #ffffff;
+  border: 0;
+  background-color: #272830;
+  cursor: pointer;
+}
+
+.slide-info .btn-info:hover {
+  background-color: #df9a7e;
+}
+
+.slide-info .btn-info:disabled {
+  background-color: #f8f8f8;
+  color: #c4c2c2;
+}
+
+.img-container {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.slide-container {
+  display: flex;
+}
+
+.nav-btn-prev,
+.nav-btn-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.nav-btn-prev img,
+.nav-btn-next img {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-btn-prev:hover:enabled img,
+.nav-btn-next:hover:enabled img {
+  filter: invert(67%) sepia(47%) saturate(434%) hue-rotate(328deg)
+    brightness(96%) contrast(82%);
+}
+
+.nav-btn-prev:disabled img,
+.nav-btn-next:disabled img {
+  filter: invert(100%) sepia(8%) saturate(2%) hue-rotate(18deg) brightness(113%)
+    contrast(82%);
+}
+
+.nav-btns {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 44px;
+  width: 128px;
+  padding: 10px;
+  right: 40px;
+  bottom: 40px;
+  z-index: 10;
+}
+
+.nav-btns button {
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .nav-btns {
+    display: none;
+  }
+  .slide-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+    border: 0;
+    padding: 20px 16px 70px 16px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: auto;
+  }
+  .swiper-slide {
+    flex-direction: column;
+  }
+  .img-container {
+    position: relative;
+  }
+  .slide-info .btn-info {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-pagination {
+    display: none;
+  }
+}

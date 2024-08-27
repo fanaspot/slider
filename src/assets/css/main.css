@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "VelaSans";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: local("VelaSans"),
+    url("../fonts/VelaSans/VelaSans-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "VelaSans";
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+  src: local("VelaSans SemiBold"),
+    url("../fonts/VelaSans/VelaSans-SemiBold.otf") format("opentype");
+}
+
+@import url("./minireset.css");
+@import url("./style.css");
